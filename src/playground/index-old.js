@@ -18,7 +18,6 @@ import ReactDOM from 'react-dom';
 
 // ReactDOM.render(ele, document.getElementById('root'));
 
-
 class List extends Component {
     render(){
      return (<ol>
