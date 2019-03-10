@@ -22,12 +22,12 @@ class Main extends Component {
           
       <Route path="/add-photo" render={({history})=>(
            <div><Title/>  
-                {/* <AddPhoto onAddPhoto = {(post)=>{
+                <AddPhoto onAddPhoto = {(post)=>{
                   console.log(post);
                   this.addPhoto(post);
                   history.push('/');
                 }
-                }/> */}
+                }/>
                 
                 </div>
        )} />      
