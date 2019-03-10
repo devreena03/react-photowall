@@ -3,6 +3,8 @@ import Title from './Title';
 import Photowall from './Photowall';
 import AddPhoto from './AddPhoto';
 import {Route} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Single from './Single';
 
 class Main extends Component {
 
@@ -11,27 +13,31 @@ class Main extends Component {
   }
 
     render(){
-      console.log(this.props.posts);
-     return <div>
+      console.log(this.props);
+     return (
+     <div>
+       <h1>
+         <Link to="/"><Title/></Link>
+       </h1>
       <Route exact path="/" render={()=>(
         <div>
-        <Title/>
-        <Photowall posts={this.props.posts} />
+        
+        <Photowall {...this.props} />
       </div>
       )} />
           
       <Route path="/add-photo" render={({history})=>(
-           <div><Title/>  
-                <AddPhoto onAddPhoto = {(post)=>{
-                  console.log(post);
-                  this.addPhoto(post);
-                  history.push('/');
-                }
-                }/>
-                
-                </div>
+           <div>  
+                <AddPhoto {...this.props} onHistory={history}/> 
+            </div>
+       )} /> 
+       <Route path="/single/:id" render={(params)=>(
+           <div>  
+                <Single {...this.props}  {...params}/> 
+          </div>
        )} />      
        </div>
+     )
     }
   }
 
