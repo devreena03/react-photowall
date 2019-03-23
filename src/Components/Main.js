@@ -8,9 +8,10 @@ import Single from './Single';
 
 class Main extends Component {
 
-  constructor(){
-    super()
-  }
+   componentDidMount(){
+     console.log('componentDidMount')
+     this.props.startLoadingPost();
+   }
 
     render(){
       console.log(this.props);

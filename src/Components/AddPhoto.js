@@ -16,7 +16,7 @@ class AddPhoto extends Component {
                 description: event.target.elements.description.value,
                 imageLink: event.target.elements.link.value
             }
-           this.props.addPhoto(post);
+           this.props.startAddingPost(post);
            this.props.onHistory.push('/');
         
     }
